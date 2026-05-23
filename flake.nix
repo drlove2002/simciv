@@ -20,12 +20,9 @@
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = with pkgs; [
         gcc
-        # Use rust-bin for more control over toolchains and targets
         (rust-bin.stable.latest.default.override {
           extensions = ["rust-src" "rust-analyzer" "clippy"];
-          targets = ["x86_64-unknown-linux-musl"];
         })
-        protobuf
       ];
     };
   };
