@@ -2,6 +2,8 @@
 
 Terminal-based civilization simulation built with Rust and ratatui. You manage food and population tick by tick.
 
+This is highly under development and a hobby project.
+
 ## Controls
 
 | Key | Action |
