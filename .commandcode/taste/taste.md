@@ -3,6 +3,7 @@ See [architecture/taste.md](architecture/taste.md)
 # Git
 - Use conventional commit format for commit messages (e.g., `feat:`, `refactor:`, `fix:`). Confidence: 0.85
 - When taste learnings are generated alongside code changes in the same work session, include the taste file in the same commit as the related code. Confidence: 0.65
+- Never include a co-author in commits. All commits should have only the user as the sole author. Confidence: 0.85
 
 # Code Style
 - Use integers instead of floats for deterministic simulation behavior. Confidence: 0.70
