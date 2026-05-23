@@ -36,7 +36,7 @@ fn run(tui: &mut Tui) -> Result<()> {
             game.tick(game.time.tick - prev);
         }
 
-        running = game.time.running;
+        running = game.running;
         tui.draw(&game)?;
 
         let elapsed = last.elapsed().as_nanos();

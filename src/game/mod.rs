@@ -5,20 +5,17 @@ pub use cmd::Cmd;
 use crate::time::SimTime;
 
 pub struct Game {
+    pub running: bool,
     pub time: SimTime,
     pub population: i32,
     pub food: i32,
 }
 
-impl Default for Game {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 impl Game {
+    #[allow(clippy::new_without_default)]
     pub fn new() -> Self {
         Self {
+            running: true,
             time: SimTime::new(),
             population: 10,
             food: 100,

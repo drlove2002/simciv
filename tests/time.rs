@@ -5,8 +5,8 @@ fn one_x_one_second() {
     let mut t = SimTime::new();
     t.add_elapsed(1_000_000_000);
     assert_eq!(t.tick, 60);
-    assert_eq!(t.second, 1);
-    assert_eq!(t.minute, 0);
+    assert_eq!(t.second(), 1);
+    assert_eq!(t.minute(), 0);
 }
 
 #[test]
@@ -36,16 +36,15 @@ fn accumulator_carries_over() {
 }
 
 #[test]
-fn fields_map_correctly() {
+fn clock_fields() {
     let mut t = SimTime::new();
-    t.add_elapsed(1_000_000_000);
-    assert_eq!(t.second, 1);
-
-    t.add_elapsed(1_000_000_000 * 59);
-    assert_eq!(t.minute, 1);
-
-    t.add_elapsed(1_000_000_000 * 60 * 60);
-    assert_eq!(t.hour, 1);
+    // 1 hour 1 minute 1 second
+    t.tick = 60 * 3661;
+    assert_eq!(t.second(), 1);
+    assert_eq!(t.minute(), 1);
+    assert_eq!(t.hour(), 1);
+    assert_eq!(t.day(), 0);
+    assert_eq!(t.week(), 0);
 }
 
 #[test]

@@ -12,7 +12,7 @@ pub enum Cmd {
 impl Game {
     pub fn handle(&mut self, cmd: Cmd) {
         match cmd {
-            Cmd::Quit => self.time.running = false,
+            Cmd::Quit => self.running = false,
             Cmd::AddFood => self.food += 100,
             Cmd::TogglePause => self.time.paused = !self.time.paused,
             Cmd::ToggleMenu => self.time.menu_open = !self.time.menu_open,

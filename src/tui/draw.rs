@@ -23,11 +23,11 @@ pub fn render(frame: &mut Frame, game: &Game) {
 fn stats_paragraph(game: &Game) -> Paragraph<'_> {
     let text = format!(
         "Week {} Day {}  {:02}:{:02}:{:02}\nPopulation: {}\nFood: {}\nSpeed: {}",
-        game.time.week,
-        game.time.day,
-        game.time.hour,
-        game.time.minute,
-        game.time.second,
+        game.time.week(),
+        game.time.day(),
+        game.time.hour(),
+        game.time.minute(),
+        game.time.second(),
         game.population,
         game.food,
         game.time.speed_label(),
